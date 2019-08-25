@@ -16,10 +16,13 @@ for filename in files:
 	print('filename: ', filename)
 	image = Image.open(filename)
 
-	comida = image_to_string(image, lang='spa')
-
 	diafile = int(filename[-6:-4])
-	menu[diafile] = comida.replace('\n', ' ')
+
+	comida = image_to_string(image, lang='spa')
+	comida = comida.replace('\n', ' ')
+	comida = comida[2:] if len(comida) > 2 else comida
+
+	menu[diafile] = comida
 
 with open('menu_comedor.json', 'w') as menufile:
 	json.dump(menu, menufile, indent=4, separators=(',', ': '))
