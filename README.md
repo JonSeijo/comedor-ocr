@@ -1,4 +1,4 @@
-# Comedor-OCR
+# comedor-ocr
 
 IMPORTANTISIMO:
 
